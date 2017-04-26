@@ -8,4 +8,5 @@ RUN cd /src && ./build.sh "$(cat VERSION)"
 
 ONBUILD COPY ./build.sh /src/build.sh
 ONBUILD COPY ./modules.go /src/modules.go
+ONBUILD RUN  chmod +x /src/build.sh
 ONBUILD RUN cd /src && ./build.sh "$(cat VERSION)-custom"
